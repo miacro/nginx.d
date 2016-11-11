@@ -1,0 +1,20 @@
+server {
+  listen 5050;
+  server_name localhost;
+# root /var/www/localhost/htdocs/rutorrent;
+  root /home/fq/rtorrent.d/ruTorrent;
+  index index.html;
+  location / {
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/run/php-fpm/php5.6.socket;
+    include fastcgi.conf;
+  }
+
+  location /RPC2 {
+    scgi_pass   127.0.0.1:5000;
+    include     scgi_params;
+#		scgi_param SCRIPT_NAME /RPC2;
+  }
+}

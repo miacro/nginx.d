@@ -1,0 +1,15 @@
+server {
+  listen 10900;
+  server_name localhost;
+  root /var/www/nginx/test/;
+  location / {
+    index index.php;
+  }
+
+  location ~ \.php$ {
+    fastcgi_pass unix:/run/php-fpm/php5.6.socket;
+#   fastcgi_pass unix:/run/fastcgi/php-cgi.socket;
+    fastcgi_index  index.php;
+    include fastcgi.conf;
+  }
+}
