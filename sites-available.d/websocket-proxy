@@ -2,7 +2,7 @@ server {
   listen 16435;
   server_name localhost;
   access_log /var/log/nginx/websocket-access.log main;
-  error_log /var/log/nginx/websocket-error.log debug;
+  error_log /var/log/nginx/websocket-error.log info;
 
   location / {
     proxy_pass http://192.168.0.80:16423;
