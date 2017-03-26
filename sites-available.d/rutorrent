@@ -2,13 +2,13 @@ server {
   listen 5050;
   server_name localhost;
 # root /var/www/localhost/htdocs/rutorrent;
-  root /home/fq/rtorrent.d/ruTorrent;
+  root /home/miacro/rtorrent.d/ruTorrent;
   index index.html;
   location / {
   }
 
   location ~ \.php$ {
-    fastcgi_pass unix:/run/php-fpm/php5.6.socket;
+    fastcgi_pass unix:/run/php-fpm/php7.socket;
     include fastcgi.conf;
   }
 
