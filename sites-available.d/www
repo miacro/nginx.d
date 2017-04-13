@@ -4,5 +4,5 @@ server {
   access_log /var/log/nginx/www-access.log main;
   error_log /var/log/nginx/www-error.log info;
   client_body_buffer_size 100M;
-  include sites-available.d/cond.d/www;
+  include sites-available.d/conf.d/www;
 }
