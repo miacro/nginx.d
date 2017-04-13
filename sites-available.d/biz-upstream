@@ -1,0 +1,3 @@
+upstream biz-node {
+  server biz-node:3001;
+}
