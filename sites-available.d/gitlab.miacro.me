@@ -1,0 +1,25 @@
+server {
+  listen 0.0.0.0:80;
+  server_name gitlab.miacro.me;
+  access_log /var/log/nginx/gitlab.miacro.me-access.log main;
+  error_log /var/log/nginx/gitlab.miacro.me-error.log info;
+  client_body_buffer_size 100M;
+  location / {
+    proxy_pass http://127.0.0.1:2080;
+    include conf.d/proxy.conf;
+  }
+}
+server {
+  listen 0.0.0.0:443;
+  server_name gitlab.miacro.me;
+  access_log /var/log/nginx/gitlab.miacro.me-access.log main;
+  error_log /var/log/nginx/gitlab.miacro.me-error.log info;
+  client_body_buffer_size 100M;
+  ssl on;
+  ssl_certificate ssl/_miacro.me.crt;
+  ssl_certificate_key ssl/_miacro.me.key;
+  location / {
+    proxy_pass https://127.0.0.1:20443;
+    include conf.d/proxy-ssl.conf;
+  }
+}
