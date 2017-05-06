@@ -19,7 +19,7 @@ server {
   ssl_certificate ssl/_miacro.me.crt;
   ssl_certificate_key ssl/_miacro.me.key;
   location / {
-    proxy_pass https://127.0.0.1:20443;
+    proxy_pass http://127.0.0.1:2080;
     include conf.d/proxy-ssl.conf;
   }
 }
