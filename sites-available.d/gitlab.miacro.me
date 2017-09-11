@@ -1,4 +1,11 @@
 server {
+  listen 0.0.0.0:80;
+  server_name gitlab.miacro.me miacro.me;
+  client_body_buffer_size 100M;
+  include conf.d/acme-client.conf;
+}
+
+server {
   listen 0.0.0.0:443;
   server_name gitlab.miacro.me;
   access_log /var/log/nginx/gitlab.miacro.me-access.log main;
@@ -11,5 +18,4 @@ server {
     proxy_pass https://127.0.0.1:20443;
     include conf.d/proxy-ssl.conf;
   }
-  include conf.d/acme-client.conf;
 }
