@@ -8,6 +8,7 @@ server {
     proxy_pass http://127.0.0.1:2080;
     include conf.d/proxy.conf;
   }
+  include conf.d/acme-client.conf;
 }
 server {
   listen 0.0.0.0:443;
@@ -22,4 +23,5 @@ server {
     proxy_pass https://127.0.0.1:20443;
     include conf.d/proxy-ssl.conf;
   }
+  include conf.d/acme-client.conf;
 }

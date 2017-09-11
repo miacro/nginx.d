@@ -44,3 +44,5 @@ tramp
 /sites-enabled.d/*
 !/sites-enabled.d/.keep
 ssl/
+challenges/
+.challenges/
