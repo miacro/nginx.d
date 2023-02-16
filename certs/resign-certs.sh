@@ -14,8 +14,8 @@ function finish {
 
 for i in {1..10};
 do
-    echo "[$(date --rfc-3339=second)] resign start"
-    ${SIGN_CMD} > ${SIGN_TMP} && finish || echo "[$(date --rfc-3339=second)] resign failed"
+    echo "[$(date --rfc-3339=second)] resign start" 1>&2
+    ${SIGN_CMD} > ${SIGN_TMP} && finish || echo "[$(date --rfc-3339=second)] resign failed" 1>&2
     sleep 60
 done
 
