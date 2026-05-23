@@ -1,4 +1,5 @@
 # Example line in your crontab (runs once per month)
 0 0 1 * * miacro /etc/nginx/certs/resign-certs.sh 2>> /var/log/acme_tiny.log
 0 1 1 * * root   /usr/bin/systemctl restart nginx
-0 1 1 * * root   /usr/bin/systemctl restart shadowsocks-libev-server@server
+0 1 1 * * root   /usr/bin/systemctl restart v2ray
+# 0 1 1 * * root   /usr/bin/systemctl restart shadowsocks-libev-server@server
