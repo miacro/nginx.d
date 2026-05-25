@@ -1,6 +1,6 @@
 server {
   listen 80;
-  server_name miacro.me, *.miacro.me;
+  server_name miacro.me *.miacro.me;
 
   location /.well-known/acme-challenge/ {
     alias /etc/nginx/challenges/;
